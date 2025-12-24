@@ -1,0 +1,327 @@
+# Sistema de Login Web - .gitignore
+
+# ===================================
+# Archivos del Sistema Operativo
+# ===================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===================================
+# IDEs y Editores
+# ===================================
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Atom
+.atom/
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===================================
+# Herramientas de Desarrollo Web
+# ===================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.yarn-integrity
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+out/
+
+# ===================================
+# Herramientas de Testing
+# ===================================
+
+# Robot Framework
+results/
+reports/
+logs/
+*.html
+*.xml
+log.html
+report.html
+output.xml
+selenium-screenshot-*.png
+
+# Selenium
+geckodriver.log
+chromedriver.log
+*.log
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output
+
+# Jest
+coverage/
+.jest/
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+# ===================================
+# Archivos Temporales y Cache
+# ===================================
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.swp
+*.swo
+
+# Cache
+.cache/
+*.cache
+.parcel-cache/
+.sass-cache/
+
+# ===================================
+# Archivos de Configuración Local
+# ===================================
+
+# Configuración local del proyecto
+config.local.js
+config.local.json
+.env.local
+.env.*.local
+
+# Archivos de configuración de servidor
+.htaccess
+web.config
+
+# ===================================
+# Archivos de Documentación Generados
+# ===================================
+
+# JSDoc
+docs/
+jsdoc/
+
+# ===================================
+# Archivos de Deployment
+# ===================================
+
+# FTP
+.ftpconfig
+.ftppass
+
+# Deployment
+deploy.sh
+deploy.bat
+.deploy/
+
+# ===================================
+# Archivos Específicos del Proyecto
+# ===================================
+
+# Archivos de prueba temporales
+test-*.html
+debug-*.html
+temp-*.html
+
+# Screenshots de pruebas
+screenshots/
+test-screenshots/
+
+# Archivos de configuración de pruebas locales
+test-config.local.js
+robot-config.local.robot
+
+# Credenciales de prueba personalizadas (si se crean)
+credentials.local.js
+
+# ===================================
+# Archivos de Seguridad
+# ===================================
+
+# Claves y certificados
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+
+# Archivos de configuración con información sensible
+secrets.json
+.secrets
+credentials.json
+
+# ===================================
+# Archivos de Base de Datos
+# ===================================
+
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
+
+# ===================================
+# Archivos de Logs
+# ===================================
+
+# Logs generales
+*.log
+logs/
+log/
+
+# Logs específicos de navegadores
+chrome_debug.log
+firefox_debug.log
+edge_debug.log
+
+# ===================================
+# Archivos de Backup
+# ===================================
+
+# Backups automáticos
+*.backup
+backup/
+backups/
+
+# ===================================
+# Archivos Específicos de Windows
+# ===================================
+
+# Windows Installer files
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# ===================================
+# Archivos de Análisis de Código
+# ===================================
+
+# SonarQube
+.sonarqube/
+.scannerwork/
+
+# ESLint
+.eslintcache
+
+# ===================================
+# Archivos de Monitoreo
+# ===================================
+
+# Lighthouse reports
+lighthouse-report.html
+lighthouse-report.json
+
+# Performance reports
+performance-report.json
+
+# ===================================
+# Archivos Personalizados
+# ===================================
+
+# Notas personales del desarrollador
+NOTES.md
+TODO.md
+PERSONAL.md
+
+# Archivos de prueba personal
+my-test.html
+personal-test.*

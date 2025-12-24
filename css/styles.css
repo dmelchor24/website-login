@@ -1,0 +1,1248 @@
+/* Estilos de la Página Web de Login - CSS Externo para Pruebas con Robot Framework */
+
+/* Estilos de Reset y Base */
+* {
+    box-sizing: border-box; /* Incluir padding y border en el ancho total */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal del sistema */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    color: #333; /* Color de texto principal */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Fondo degradado */
+    min-height: 100vh; /* Altura mínima de toda la ventana */
+    display: flex; /* Usar flexbox para centrado */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Contenedor Principal */
+.container {
+    background: white; /* Fondo blanco para el contenedor */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%; /* Ancho completo disponible */
+    max-width: 450px; /* Ancho máximo del contenedor */
+    padding: 40px; /* Espaciado interno */
+    animation: fadeIn 0.6s ease-out; /* Animación de entrada */
+}
+
+/* Animación de aparición suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comenzar invisible */
+        transform: translateY(20px); /* Comenzar desplazado hacia abajo */
+    }
+    to {
+        opacity: 1; /* Terminar completamente visible */
+        transform: translateY(0); /* Terminar en posición normal */
+    }
+}
+
+/* Encabezado */
+.header {
+    text-align: center; /* Centrar texto del encabezado */
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+#page-title {
+    color: #4a5568; /* Color del título principal */
+    font-size: 2rem; /* Tamaño de fuente grande */
+    font-weight: 600; /* Peso de fuente semi-negrita */
+    margin-bottom: 8px; /* Espaciado inferior pequeño */
+}
+
+#page-subtitle {
+    color: #718096; /* Color del subtítulo (más claro) */
+    font-size: 0.95rem; /* Tamaño de fuente ligeramente menor */
+    font-weight: 400; /* Peso de fuente normal */
+}
+
+/* Contenido Principal */
+.main-content {
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+/* Estilos del Formulario */
+.login-form {
+    margin-bottom: 30px; /* Espaciado inferior del formulario */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espaciado entre grupos de campos */
+}
+
+.form-group label {
+    display: block; /* Mostrar como bloque para ocupar línea completa */
+    margin-bottom: 6px; /* Espaciado inferior de la etiqueta */
+    color: #4a5568; /* Color de la etiqueta */
+    font-weight: 500; /* Peso de fuente medio */
+    font-size: 0.95rem; /* Tamaño de fuente de la etiqueta */
+}
+
+.form-group input {
+    width: 100%; /* Ancho completo del contenedor */
+    padding: 12px 16px; /* Espaciado interno del campo */
+    border: 2px solid #e2e8f0; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente del texto */
+    transition: all 0.3s ease; /* Transición suave para cambios */
+    background-color: #f7fafc; /* Fondo gris muy claro */
+}
+
+.form-group input:focus {
+    outline: none; /* Quitar borde de enfoque por defecto */
+    border-color: #667eea; /* Cambiar color del borde al enfocar */
+    background-color: white; /* Fondo blanco al enfocar */
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); /* Sombra de enfoque */
+}
+
+.form-group input:hover {
+    border-color: #cbd5e0; /* Color del borde al pasar el mouse */
+}
+
+/* Mensajes de Error */
+.error-message {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    min-height: 20px;
+    display: block;
+}
+
+/* Acciones del Formulario */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.form-actions button {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilos de Botón Primario */
+.primary-button,
+#login-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.primary-button:hover,
+#login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.primary-button:active,
+#login-button:active {
+    transform: translateY(0);
+}
+
+.primary-button:focus,
+#login-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+/* Estilos de Botón Secundario */
+.secondary-button,
+#clear-button {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+}
+
+.secondary-button:hover,
+#clear-button:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.secondary-button:focus,
+#clear-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(160, 174, 192, 0.3);
+}
+
+/* Mensajes de Estado */
+.status-message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    min-height: 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.status-message.success {
+    background-color: #f0fff4;
+    color: #38a169;
+    border-color: #9ae6b4;
+}
+
+.status-message.error {
+    background-color: #fed7d7;
+    color: #e53e3e;
+    border-color: #feb2b2;
+}
+
+.status-message.info {
+    background-color: #ebf8ff;
+    color: #3182ce;
+    border-color: #90cdf4;
+}
+
+.status-message.warning {
+    background-color: #fffbeb;
+    color: #d69e2e;
+    border-color: #f6e05e;
+}
+
+/* Sección de Información de Pruebas */
+.test-info {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#test-info-title {
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+#test-credentials {
+    color: #718096;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+#test-credentials code {
+    background: #edf2f7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Pie de Página */
+.footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+#footer-text {
+    color: #a0aec0;
+    font-size: 0.85rem;
+}
+
+/* Mejoras de Accesibilidad */
+.form-group input:invalid {
+    border-color: #e53e3e;
+}
+
+.form-group input:valid {
+    border-color: #38a169;
+}
+
+/* Focus indicators for keyboard navigation */
+*:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    body {
+        background: #000;
+        color: #fff;
+    }
+    
+    .container {
+        background: #fff;
+        border: 2px solid #000;
+    }
+    
+    .form-group input {
+        border: 2px solid #000;
+        background: #fff;
+    }
+    
+    #login-button {
+        background: #000;
+        color: #fff;
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Diseño Responsivo para Móviles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+    
+    #page-title {
+        font-size: 1.75rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    #page-title {
+        font-size: 1.5rem;
+    }
+    
+    .form-group input {
+        padding: 10px 12px;
+    }
+    
+    .form-actions button {
+        padding: 10px 16px;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 500px;
+        padding: 45px;
+    }
+}
+
+/* Large desktop styles */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 480px;
+        padding: 50px;
+    }
+    
+    #page-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .container {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .test-info {
+        page-break-inside: avoid;
+    }
+}
+
+/* Estilos Específicos de la Página de Éxito */
+
+/* Icono de Éxito */
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    margin: 0 auto 20px;
+    animation: successPulse 2s ease-in-out infinite;
+}
+
+@keyframes successPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(72, 187, 120, 0);
+    }
+}
+
+/* Success Message */
+.success-message {
+    background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+    border: 1px solid #9ae6b4;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#welcome-title {
+    color: #2f855a;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+#welcome-text {
+    color: #276749;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* User Info Section */
+.user-info {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+#session-title {
+    color: #4a5568;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.info-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 500;
+    color: #718096;
+}
+
+.info-value {
+    font-weight: 600;
+    color: #2d3748;
+    font-family: 'Courier New', monospace;
+}
+
+/* Actions Section */
+.actions-section {
+    margin-bottom: 25px;
+}
+
+#actions-title {
+    color: #4a5568;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr;
+}
+
+.action-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.action-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.action-btn.secondary {
+    background: #edf2f7;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+}
+
+.action-btn.secondary:hover {
+    background: #e2e8f0;
+    border-color: #cbd5e0;
+}
+
+.action-btn.logout {
+    background: #fed7d7;
+    color: #c53030;
+    border: 2px solid #feb2b2;
+}
+
+.action-btn.logout:hover {
+    background: #fbb6ce;
+    border-color: #f687b3;
+}
+
+.action-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+/* Información de Pruebas para Página de Éxito */
+#success-test-info {
+    background: #fffaf0;
+    border: 1px solid #fbd38d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#test-section-title {
+    color: #c05621;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.test-details p {
+    margin-bottom: 8px;
+    color: #744210;
+    font-size: 0.9rem;
+}
+
+.status-success {
+    color: #38a169;
+    font-weight: 600;
+}
+
+#back-to-login {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#back-to-login:hover {
+    text-decoration: underline;
+}
+
+#back-to-login:focus {
+    outline: 2px solid #3182ce;
+    outline-offset: 2px;
+}
+
+/* Pie de Página de la Página de Éxito */
+#success-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+#success-footer-text {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+#copyright-text {
+    color: #cbd5e0;
+    font-size: 0.8rem;
+}
+
+/* Diseño Responsivo para Página de Éxito en Móviles */
+@media (max-width: 768px) {
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .action-buttons {
+        gap: 8px;
+    }
+    
+    .action-btn {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .action-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .action-btn.logout {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .action-buttons {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .action-btn.logout {
+        grid-column: auto;
+    }
+}
+/* Estados de Validación de Formulario */
+.form-group input.error {
+    border-color: #e53e3e;
+    background-color: #fed7d7;
+}
+
+.form-group input.error:focus {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: #38a169;
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #e53e3e;
+}
+
+/* Estados de Botones */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+button:disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Variantes de Mensajes de Estado */
+.status-message.info {
+    background-color: #ebf8ff;
+    color: #2b6cb0;
+    border: 1px solid #90cdf4;
+}
+
+.status-message.loading {
+    background-color: #f7fafc;
+    color: #4a5568;
+    border: 1px solid #cbd5e0;
+}
+
+/* Animación de Carga */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    border-top-color: #4a5568;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Gestión de Enfoque del Formulario */
+.form-group input:focus + .error-message {
+    display: block;
+}
+
+/* Mejoras de Accesibilidad */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* High Contrast Mode Adjustments */
+@media (prefers-contrast: high) {
+    .form-group input.error {
+        border: 3px solid #e53e3e;
+        background-color: #fff;
+    }
+    
+    .status-message.error {
+        background-color: #fff;
+        border: 3px solid #e53e3e;
+    }
+    
+    .status-message.success {
+        background-color: #fff;
+        border: 3px solid #38a169;
+    }
+}
+/* Mejoras de Accesibilidad Adicionales */
+
+/* Enlace de Salto */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 1000;
+    font-weight: bold;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Contenido Solo para Lectores de Pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Indicadores de Campos Requeridos */
+.required-indicator {
+    color: #e53e3e;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+/* Help Text */
+.help-text {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+/* Password Toggle Button */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    color: #718096;
+    transition: all 0.2s ease;
+}
+
+.password-toggle:hover {
+    background-color: #f7fafc;
+    color: #4a5568;
+}
+
+.password-toggle:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+    background-color: #ebf8ff;
+}
+
+/* Indicadores de Enfoque Mejorados */
+.focused {
+    outline: 3px solid #667eea !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 5px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Mejoras de Botones */
+.primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.button-text {
+    flex: 1;
+}
+
+.button-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Password Toggle Button */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+}
+
+.password-toggle:hover {
+    background-color: #f1f5f9;
+}
+
+.password-toggle:focus {
+    outline: none;
+    background-color: #e2e8f0;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+/* Estados de Error de Entrada */
+.form-group input.error {
+    border-color: #e53e3e;
+    background-color: #fed7d7;
+}
+
+.form-group input.error:focus {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+/* Help Text */
+.help-text {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+/* Indicador de Campo Requerido */
+.required-indicator {
+    color: #e53e3e;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+/* Información de Atajos de Teclado */
+.keyboard-shortcuts {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f0f4f8;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.keyboard-shortcuts h3 {
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+    color: #4a5568;
+}
+
+.keyboard-shortcuts ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.keyboard-shortcuts li {
+    margin-bottom: 4px;
+}
+
+.keyboard-shortcuts kbd {
+    background: #e2e8f0;
+    border: 1px solid #cbd5e0;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #2d3748;
+}
+
+/* High Contrast Mode Adjustments */
+.high-contrast {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast .container {
+    background: #fff !important;
+    color: #000 !important;
+    border: 3px solid #000 !important;
+}
+
+.high-contrast input {
+    background: #fff !important;
+    color: #000 !important;
+    border: 2px solid #000 !important;
+}
+
+.high-contrast button {
+    background: #000 !important;
+    color: #fff !important;
+    border: 2px solid #000 !important;
+}
+
+.high-contrast .secondary-button {
+    background: #fff !important;
+    color: #000 !important;
+    border: 2px solid #000 !important;
+}
+
+/* Gestión de Enfoque */
+.form-group:focus-within .help-text {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Estados de Error Mejorados */
+.form-group input.error:focus {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2);
+}
+
+/* Soporte para Movimiento Reducido */
+@media (prefers-reduced-motion: reduce) {
+    .skip-link {
+        transition: none;
+    }
+    
+    .password-toggle {
+        transition: none;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Soporte para Texto Grande */
+@media (min-resolution: 120dpi) {
+    body {
+        font-size: 1.1rem;
+    }
+    
+    .form-group input {
+        padding: 14px 18px;
+        font-size: 1.1rem;
+    }
+    
+    .form-actions button {
+        padding: 14px 22px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Soporte para Modo Oscuro */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        color: #f7fafc;
+    }
+    
+    .container {
+        background: #2d3748;
+        color: #f7fafc;
+        border: 1px solid #4a5568;
+    }
+    
+    .form-group input {
+        background: #4a5568;
+        color: #f7fafc;
+        border-color: #718096;
+    }
+    
+    .form-group input:focus {
+        background: #2d3748;
+        border-color: #667eea;
+    }
+    
+    .help-text {
+        color: #a0aec0;
+    }
+    
+    .test-info {
+        background: #1a202c;
+        border-color: #4a5568;
+    }
+    
+    .keyboard-shortcuts {
+        background: #1a202c;
+        border-left-color: #667eea;
+    }
+}
+
+/* Accesibilidad para Impresión */
+@media print {
+    .skip-link,
+    .password-toggle {
+        display: none;
+    }
+    
+    .keyboard-shortcuts {
+        page-break-inside: avoid;
+    }
+    
+    .help-text {
+        font-size: 0.9rem;
+    }
+}
+/* Mejoras de Gestión de Sesión */
+
+/* Visualización de Duración de Sesión */
+#session-duration {
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+}
+
+/* Botón de Extender Sesión */
+.action-btn.info {
+    background: #bee3f8;
+    color: #2c5282;
+    border: 2px solid #90cdf4;
+}
+
+.action-btn.info:hover {
+    background: #90cdf4;
+    border-color: #63b3ed;
+}
+
+.action-btn.info:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+}
+
+/* Indicadores de Estado de Sesión */
+.session-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.session-status.active {
+    background: #c6f6d5;
+    color: #2f855a;
+}
+
+.session-status.warning {
+    background: #fef5e7;
+    color: #c05621;
+}
+
+.session-status.expired {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+/* Mejoras de Información de Sesión */
+.info-item {
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.info-item:hover {
+    background-color: #f7fafc;
+    border-radius: 4px;
+}
+
+/* Estilos de Advertencia de Sesión */
+.session-warning {
+    background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
+    border: 2px solid #f6ad55;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        border-color: #f6ad55;
+    }
+    50% {
+        border-color: #ed8936;
+    }
+}
+
+.session-warning h4 {
+    color: #c05621;
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+}
+
+.session-warning p {
+    color: #744210;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Diseño Responsivo para Gestión de Sesión en Móviles */
+@media (max-width: 768px) {
+    .action-buttons {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .action-btn {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    #session-duration {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .action-buttons {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .action-btn.logout {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1025px) {
+    .action-buttons {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .action-btn.logout {
+        grid-column: auto;
+    }
+}
+
+/* Gestión de Sesión en Modo Oscuro */
+@media (prefers-color-scheme: dark) {
+    .action-btn.info {
+        background: #2a4365;
+        color: #bee3f8;
+        border-color: #3182ce;
+    }
+    
+    .action-btn.info:hover {
+        background: #3182ce;
+        border-color: #63b3ed;
+    }
+    
+    .session-warning {
+        background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        border-color: #ed8936;
+    }
+    
+    .session-warning h4 {
+        color: #f6ad55;
+    }
+    
+    .session-warning p {
+        color: #fbd38d;
+    }
+    
+    .info-item:hover {
+        background-color: #4a5568;
+    }
+}
