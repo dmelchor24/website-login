@@ -324,14 +324,3 @@ PERSONAL.md
 # Archivos de prueba personal
 my-test.html
 personal-test.*
-
-# ===================================
-# Asegurar que assets/ no sea ignorado
-# ===================================
-
-# Incluir explícitamente la carpeta assets
-!assets/
-!assets/**
-!*.png
-!*.ico
-!*.svg
