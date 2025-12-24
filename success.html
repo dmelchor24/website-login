@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Exitoso - Test Page</title>
+    <!-- Favicon del proyecto -->
+    <link rel="icon" href="assets/icons/iconoIndex.png" type="image/png">
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Contenedor principal de la página de éxito -->
+    <div class="container" id="success-container" data-testid="success-container">
+        <!-- Encabezado con icono y título de éxito -->
+        <header class="header" id="success-header" data-testid="success-header">
+            <!-- Icono de éxito con marca de verificación -->
+            <div class="success-icon" id="success-icon" data-testid="success-icon">
+                ✓
+            </div>
+            <!-- Título principal de la página -->
+            <h1 id="success-title" data-testid="success-title">¡Login Exitoso!</h1>
+            <!-- Subtítulo descriptivo -->
+            <p id="success-subtitle" data-testid="success-subtitle">Has iniciado sesión correctamente</p>
+        </header>
+
+        <!-- Contenido principal de la página -->
+        <main class="main-content" id="success-content" data-testid="success-content">
+            <!-- Mensaje de bienvenida -->
+            <div class="success-message" id="success-message" data-testid="success-message">
+                <h2 id="welcome-title" data-testid="welcome-title">Bienvenido al Sistema</h2>
+                <p id="welcome-text" data-testid="welcome-text">
+                    Tu autenticación ha sido procesada exitosamente. 
+                    Esta página confirma que el sistema de login está funcionando correctamente.
+                </p>
+            </div>
+
+            <!-- Sección de información del usuario y sesión -->
+            <div class="user-info" id="user-info" data-testid="user-info">
+                <h3 id="session-title" data-testid="session-title">Información de Sesión</h3>
+                <!-- Cuadrícula con información de la sesión -->
+                <div class="info-grid" id="info-grid" data-testid="info-grid">
+                    <!-- Información del usuario -->
+                    <div class="info-item" id="username-info" data-testid="username-info">
+                        <span class="info-label" id="username-label" data-testid="username-label">Usuario:</span>
+                        <span class="info-value" id="username-value" data-testid="username-value">testuser</span>
+                    </div>
+                    <!-- Hora de inicio de sesión -->
+                    <div class="info-item" id="login-time-info" data-testid="login-time-info">
+                        <span class="info-label" id="time-label" data-testid="time-label">Hora de Login:</span>
+                        <span class="info-value" id="time-value" data-testid="time-value">--:--:--</span>
+                    </div>
+                    <!-- ID único de la sesión -->
+                    <div class="info-item" id="session-id-info" data-testid="session-id-info">
+                        <span class="info-label" id="session-label" data-testid="session-label">ID de Sesión:</span>
+                        <span class="info-value" id="session-value" data-testid="session-value">TEST-SESSION-001</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de acciones disponibles -->
+            <div class="actions-section" id="actions-section" data-testid="actions-section">
+                <h3 id="actions-title" data-testid="actions-title">Acciones Disponibles</h3>
+                <!-- Botones de acción -->
+                <div class="action-buttons" id="action-buttons" data-testid="action-buttons">
+                    <!-- Botón para ir al dashboard -->
+                    <button 
+                        type="button" 
+                        id="dashboard-button" 
+                        data-testid="dashboard-button"
+                        class="action-btn primary"
+                    >
+                        Ir al Dashboard
+                    </button>
+                    <!-- Botón para ver perfil de usuario -->
+                    <button 
+                        type="button" 
+                        id="profile-button" 
+                        data-testid="profile-button"
+                        class="action-btn secondary"
+                    >
+                        Ver Perfil
+                    </button>
+                    <!-- Botón para extender la sesión -->
+                    <button 
+                        type="button" 
+                        id="extend-session-button" 
+                        data-testid="extend-session-button"
+                        class="action-btn info"
+                    >
+                        Extender Sesión
+                    </button>
+                    <!-- Botón para cerrar sesión -->
+                    <button 
+                        type="button" 
+                        id="logout-button" 
+                        data-testid="logout-button"
+                        class="action-btn logout"
+                    >
+                        Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+
+            <!-- Información para pruebas automatizadas -->
+            <div class="test-info" id="success-test-info" data-testid="success-test-info">
+                <h3 id="test-section-title" data-testid="test-section-title">Información para Pruebas</h3>
+                <!-- Detalles de la prueba -->
+                <div class="test-details" id="test-details" data-testid="test-details">
+                    <!-- Estado de la autenticación -->
+                    <p id="test-status" data-testid="test-status">
+                        <strong>Estado:</strong> <span class="status-success" id="status-indicator" data-testid="status-indicator">Autenticación Exitosa</span>
+                    </p>
+                    <!-- Marca de tiempo de la prueba -->
+                    <p id="test-timestamp" data-testid="test-timestamp">
+                        <strong>Timestamp:</strong> <span id="timestamp-value" data-testid="timestamp-value">--</span>
+                    </p>
+                    <!-- Enlace de navegación -->
+                    <p id="test-navigation" data-testid="test-navigation">
+                        <strong>Navegación:</strong> 
+                        <a href="index.html" id="back-to-login" data-testid="back-to-login">Volver al Login</a>
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="footer" id="success-footer" data-testid="success-footer">
+            <!-- Texto descriptivo del pie de página -->
+            <p id="success-footer-text" data-testid="success-footer-text">
+                Página de éxito - Sistema de pruebas para Robot Framework
+            </p>
+            <!-- Información de copyright -->
+            <p id="copyright-text" data-testid="copyright-text">
+                © 2024 - Test Login System
+            </p>
+        </footer>
+    </div>
+
+    <!-- Script JavaScript para la funcionalidad de la página -->
+    <script src="js/success.js"></script>
+</body>
+</html>

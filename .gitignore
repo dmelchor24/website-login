@@ -126,7 +126,6 @@ out/
 results/
 reports/
 logs/
-*.html
 *.xml
 log.html
 report.html

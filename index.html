@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Test Page</title>
+    <!-- Favicon del proyecto -->
+    <link rel="icon" href="assets/icons/iconoIndex.png" type="image/png">
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Contenedor principal de la página -->
+    <div class="container" id="main-container" data-testid="main-container">
+        <!-- Encabezado de la página -->
+        <header class="header" id="page-header" data-testid="page-header" role="banner">
+            <h1 id="page-title" data-testid="page-title">Sistema de Login</h1>
+            <p id="page-subtitle" data-testid="page-subtitle">Página de pruebas para Robot Framework</p>
+        </header>
+
+        <!-- Contenido principal -->
+        <main class="main-content" id="main-content" data-testid="main-content" role="main">
+            <!-- Formulario de login -->
+            <form class="login-form" id="login-form" data-testid="login-form" novalidate role="form" aria-labelledby="page-title">
+                <!-- Grupo del campo de usuario -->
+                <div class="form-group" id="username-group" data-testid="username-group">
+                    <label for="username-input" id="username-label" data-testid="username-label">
+                        Usuario:
+                        <!-- Indicador de campo requerido -->
+                        <span class="required-indicator" aria-label="campo requerido">*</span>
+                    </label>
+                    <!-- Campo de entrada para el usuario -->
+                    <input 
+                        type="text" 
+                        id="username-input" 
+                        name="username" 
+                        data-testid="username-input"
+                        aria-describedby="username-error username-help"
+                        aria-required="true"
+                        aria-invalid="false"
+                        autocomplete="username"
+                        placeholder="Ingrese su usuario"
+                        tabindex="1"
+                        maxlength="50"
+                    >
+                    <!-- Texto de ayuda para el campo usuario -->
+                    <div class="help-text" id="username-help" data-testid="username-help">
+                        Mínimo 3 caracteres, solo letras, números y guiones bajos
+                    </div>
+                    <!-- Contenedor para mensajes de error del usuario -->
+                    <div class="error-message" id="username-error" data-testid="username-error" aria-live="polite" role="alert"></div>
+                </div>
+
+                <!-- Grupo del campo de contraseña -->
+                <div class="form-group" id="password-group" data-testid="password-group">
+                    <label for="password-input" id="password-label" data-testid="password-label">
+                        Contraseña:
+                        <!-- Indicador de campo requerido -->
+                        <span class="required-indicator" aria-label="campo requerido">*</span>
+                    </label>
+                    <!-- Contenedor para el campo de contraseña con botón de mostrar/ocultar -->
+                    <div class="password-wrapper" id="password-wrapper" data-testid="password-wrapper">
+                        <!-- Campo de entrada para la contraseña -->
+                        <input 
+                            type="password" 
+                            id="password-input" 
+                            name="password" 
+                            data-testid="password-input"
+                            aria-describedby="password-error password-help"
+                            aria-required="true"
+                            aria-invalid="false"
+                            autocomplete="current-password"
+                            placeholder="Ingrese su contraseña"
+                            tabindex="2"
+                            maxlength="100"
+                        >
+                        <!-- Botón para mostrar/ocultar contraseña -->
+                        <button 
+                            type="button" 
+                            id="toggle-password" 
+                            data-testid="toggle-password"
+                            aria-label="Mostrar contraseña"
+                            tabindex="3"
+                            class="password-toggle"
+                        >
+                            <span aria-hidden="true">👁</span>
+                        </button>
+                    </div>
+                    <!-- Texto de ayuda para el campo contraseña -->
+                    <div class="help-text" id="password-help" data-testid="password-help">
+                        Mínimo 6 caracteres
+                    </div>
+                    <!-- Contenedor para mensajes de error de la contraseña -->
+                    <div class="error-message" id="password-error" data-testid="password-error" aria-live="polite" role="alert"></div>
+                </div>
+
+                <!-- Sección de botones de acción -->
+                <div class="form-actions" id="form-actions" data-testid="form-actions">
+                    <!-- Botón principal de iniciar sesión -->
+                    <button 
+                        type="submit" 
+                        id="login-button" 
+                        data-testid="login-button"
+                        aria-describedby="login-status"
+                        tabindex="4"
+                        class="primary-button"
+                    >
+                        <span class="button-text">Iniciar Sesión</span>
+                        <span class="button-icon" aria-hidden="true"></span>
+                    </button>
+                    <!-- Botón secundario para limpiar el formulario -->
+                    <button 
+                        type="button" 
+                        id="clear-button" 
+                        data-testid="clear-button"
+                        tabindex="5"
+                        aria-label="Limpiar formulario"
+                        class="secondary-button"
+                    >
+                        Limpiar
+                    </button>
+                </div>
+
+                <!-- Área para mostrar mensajes de estado del login -->
+                <div class="status-message" id="login-status" data-testid="login-status" aria-live="assertive" role="status"></div>
+            </form>
+
+            <!-- Sección de información para pruebas -->
+            <div class="test-info" id="test-info" data-testid="test-info" role="complementary" aria-labelledby="test-info-title">
+                <h2 id="test-info-title" data-testid="test-info-title">Información para Pruebas</h2>
+                <!-- Credenciales de prueba predefinidas -->
+                <p id="test-credentials" data-testid="test-credentials">
+                    <strong>Credenciales de prueba:</strong><br>
+                    Usuario: <code id="test-username" data-testid="test-username">testuser</code><br>
+                    Contraseña: <code id="test-password" data-testid="test-password">testpass123</code>
+                </p>
+                <!-- Información sobre atajos de teclado disponibles -->
+                <div class="keyboard-shortcuts" id="keyboard-shortcuts" data-testid="keyboard-shortcuts">
+                    <h3>Atajos de Teclado:</h3>
+                    <ul>
+                        <li><kbd>Tab</kbd> - Navegar entre campos</li>
+                        <li><kbd>Enter</kbd> - Enviar formulario</li>
+                        <li><kbd>Escape</kbd> - Limpiar formulario</li>
+                        <li><kbd>Alt + P</kbd> - Mostrar/ocultar contraseña</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="footer" id="page-footer" data-testid="page-footer" role="contentinfo">
+            <p id="footer-text" data-testid="footer-text">
+                Página de pruebas para automatización con Robot Framework
+            </p>
+        </footer>
+    </div>
+
+    <!-- Enlace de salto para lectores de pantalla (accesibilidad) -->
+    <a href="#main-content" class="skip-link" id="skip-link" data-testid="skip-link">
+        Saltar al contenido principal
+    </a>
+
+    <!-- Inclusión del script JavaScript principal -->
+    <script src="js/login.js"></script>
+</body>
+</html>
