@@ -505,6 +505,8 @@ input:focus {
     display: grid;
     gap: 12px;
     grid-template-columns: 1fr;
+    justify-items: center; /* Centrar botones horizontalmente */
+    max-width: 100%; /* Asegurar que no se salga del contenedor */
 }
 
 .action-btn {
@@ -516,6 +518,9 @@ input:focus {
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
+    width: 100%; /* Asegurar ancho completo en móviles */
+    max-width: 280px; /* Limitar ancho máximo */
+    box-sizing: border-box; /* Incluir padding en el ancho */
 }
 
 .action-btn.primary {
@@ -630,11 +635,15 @@ input:focus {
     }
     
     .action-buttons {
-        gap: 8px;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        justify-items: center;
     }
     
     .action-btn {
-        padding: 10px 16px;
+        width: 100%;
+        max-width: 250px;
+        padding: 12px 16px;
         font-size: 0.95rem;
     }
 }
@@ -642,20 +651,26 @@ input:focus {
 @media (min-width: 769px) {
     .action-buttons {
         grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        justify-items: stretch; /* Estirar botones en tablet */
     }
     
     .action-btn.logout {
-        grid-column: 1 / -1;
+        grid-column: 1 / -1; /* Botón logout ocupa toda la fila */
+        max-width: none; /* Sin límite de ancho en tablet */
     }
 }
 
 @media (min-width: 1024px) {
     .action-buttons {
         grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        justify-items: stretch;
     }
     
     .action-btn.logout {
-        grid-column: auto;
+        grid-column: auto; /* Botón logout en su propia columna */
+        max-width: none;
     }
 }
 /* Estados de Validación de Formulario */
@@ -1179,41 +1194,17 @@ button:disabled:hover {
 
 /* Diseño Responsivo para Gestión de Sesión en Móviles */
 @media (max-width: 768px) {
-    .action-buttons {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .action-btn {
-        width: 100%;
-        margin-bottom: 8px;
-    }
-    
     #session-duration {
         font-size: 1rem;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .action-buttons {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-    
-    .action-btn.logout {
-        grid-column: 1 / -1;
-    }
+    /* Estilos para tablets ya definidos arriba */
 }
 
 @media (min-width: 1025px) {
-    .action-buttons {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 12px;
-    }
-    
-    .action-btn.logout {
-        grid-column: auto;
-    }
+    /* Estilos para desktop ya definidos arriba */
 }
 
 /* Gestión de Sesión en Modo Oscuro */

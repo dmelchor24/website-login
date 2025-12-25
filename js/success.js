@@ -69,12 +69,26 @@ class SuccessPage {
 
     /**
      * Establece la marca de tiempo actual en el elemento correspondiente
+     * Muestra la fecha y hora en zona horaria UTC-6
      */
     setTimestamp() {
         const timestampElement = document.getElementById('timestamp-value');
         if (timestampElement) {
             const now = new Date();
-            timestampElement.textContent = now.toISOString();
+            // Ajustar a UTC-6 (restar 6 horas en milisegundos)
+            const utcMinus6 = new Date(now.getTime() - (6 * 60 * 60 * 1000));
+            
+            // Formatear fecha y hora en formato legible
+            const year = utcMinus6.getUTCFullYear();
+            const month = String(utcMinus6.getUTCMonth() + 1).padStart(2, '0');
+            const day = String(utcMinus6.getUTCDate()).padStart(2, '0');
+            const hours = String(utcMinus6.getUTCHours()).padStart(2, '0');
+            const minutes = String(utcMinus6.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(utcMinus6.getUTCSeconds()).padStart(2, '0');
+            
+            // Formato: YYYY-MM-DD HH:mm:ss UTC-6
+            const formattedTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds} UTC-6`;
+            timestampElement.textContent = formattedTime;
         }
     }
 
