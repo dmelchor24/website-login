@@ -47,4 +47,4 @@ jobs:
         git config --global user.email "github-actions@github.com"
         git add docs
         git commit -m "Actualizacion: Reporte de Robot Framework" || echo "Sin ningun cambio"
-        git pushgit 
+        git push
