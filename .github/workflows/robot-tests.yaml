@@ -28,7 +28,7 @@ jobs:
 
     - name: Run Robot Framework tests     # Paso 5: Ejecución de tests
       run: |
-        python scripts/execute-tests.py
+        python scripts/execute-tests.py --base-url=https://website-login-test.netlify.app
 
     - name: Upload Robot Framework results    # Paso 6: Aunque los tests fallen se sube los reportes
       if: always()      # Paso 6.1: Los archivos (artefactos) que se encuentren en la carpeta results se suben

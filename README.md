@@ -2,6 +2,9 @@
 
 Un sistema de login web completo desarrollado específicamente para pruebas automatizadas con Robot Framework. Incluye autenticación, gestión de sesiones, validación de formularios y características de accesibilidad.
 
+![Robot Framework Tests](https://github.com/dmelchor24/website-login/actions/workflows/robot-tests.yml/badge.svg)
+
+
 ## 🚀 Características
 
 - **Autenticación Completa**: Sistema de login con credenciales predefinidas
