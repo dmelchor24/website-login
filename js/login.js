@@ -5,9 +5,9 @@
 
 // Credenciales predefinidas para pruebas
 const TEST_CREDENTIALS = {
-    'testuser': 'testpass123',
-    'admin': 'admin123',
-    'demo': 'demo123'
+    'testuser': 'testpass123PQ',
+    'admin': 'admin123PQ',
+    'demo': 'demo123PQ'
 };
 
 /**

@@ -1,0 +1,38 @@
+name: Robot Framework Tests # Nombre visible en Actions
+
+on:
+  push:
+    branches: [ "main" ]  # Se ejecuta cuando se hace push a la rama main
+  pull_request:
+
+jobs:
+  robot-tests:  # ID del job
+    runs-on: ubuntu-latest  # GitHub crea una VM
+
+    steps:
+    - name: Checkout repository   # Paso 1: Descarga el código en la VM
+      uses: actions/checkout@v4
+
+    - name: Set up Python     # Paso 2: Instala Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install Chrome      # Paso 3: Instala Chrome
+      uses: browser-actions/setup-chrome@v1
+
+    - name: Install dependencies      # Paso 4: Instala dependencias definidas en requirements.txt
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Robot Framework tests     # Paso 5: Ejecución de tests
+      run: |
+        python scripts/execute-tests.py
+
+    - name: Upload Robot Framework results    # Paso 6: Aunque los tests fallen se sube los reportes
+      if: always()      # Paso 6.1: Los archivos (artefactos) que se encuentren en la carpeta results se suben
+      uses: actions/upload-artifact@v4
+      with:
+        name: robot-results
+        path: results/
