@@ -5,6 +5,9 @@ on:
     branches: [ "main" ]  # Se ejecuta cuando se hace push a la rama main
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   robot-tests:  # ID del job
     runs-on: ubuntu-latest  # GitHub crea una VM
