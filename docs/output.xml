@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.5 on win32)" generated="2025-12-28T12:27:46.184235" rpa="false" schemaversion="5">
-<suite id="s1" name="Tests" source="C:\Users\dmelc\OneDrive\Documents\Workspace DM\Proyectos de IA\sitioWeb\tests">
-<suite id="s1-s1" name="Login" source="C:\Users\dmelc\OneDrive\Documents\Workspace DM\Proyectos de IA\sitioWeb\tests\login.robot">
+<robot generator="Robot 7.0 (Python 3.11.14 on linux)" generated="2025-12-28T22:04:45.861229" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/home/runner/work/website-login/website-login/tests">
+<suite id="s1-s1" name="Login" source="/home/runner/work/website-login/website-login/tests/login.robot">
 <kw name="Abrir Navegador" owner="common" type="SETUP">
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Abrir Navegador Headless" owner="common">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-12-28T12:27:46.998941" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5500'.</msg>
+<msg time="2025-12-28T22:04:46.036459" level="INFO">Opening browser 'chrome' to base url 'https://website-login-test.netlify.app'.</msg>
 <arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>options=add_argument("--headless")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-12-28T12:27:46.998310" elapsed="2.344131"/>
+<status status="PASS" start="2025-12-28T22:04:46.036222" elapsed="11.851923"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-12-28T12:27:49.343230" elapsed="0.039690"/>
+<status status="PASS" start="2025-12-28T22:04:57.888553" elapsed="0.055952"/>
 </kw>
-<status status="PASS" start="2025-12-28T12:27:46.997703" elapsed="2.385495"/>
+<status status="PASS" start="2025-12-28T22:04:46.036022" elapsed="11.908677"/>
 </kw>
 <arg>'${HEADLESS}' == 'true'</arg>
 <arg>Abrir Navegador Headless</arg>
 <arg>ELSE</arg>
 <arg>Abrir Navegador Visual</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-12-28T12:27:46.995934" elapsed="2.387396"/>
+<status status="PASS" start="2025-12-28T22:04:46.035717" elapsed="11.909061"/>
 </kw>
-<status status="PASS" start="2025-12-28T12:27:46.994157" elapsed="2.389334"/>
+<status status="PASS" start="2025-12-28T22:04:46.035073" elapsed="11.909806"/>
 </kw>
 <test id="s1-s1-t1" name="Login exitoso con credenciales válidas" line="9">
 <kw name="Ingresar credenciales válidas" owner="common">
@@ -34,73 +34,73 @@
 <arg>${InputUsuario}</arg>
 <arg>${TIMEOUT10S}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-28T12:27:49.386856" elapsed="0.078351"/>
+<status status="PASS" start="2025-12-28T22:04:57.951048" elapsed="0.152528"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-28T12:27:49.466279" level="INFO">Typing text 'testuser' into text field 'id=username-input'.</msg>
+<msg time="2025-12-28T22:04:58.104289" level="INFO">Typing text 'testuser' into text field 'id=username-input'.</msg>
 <arg>${InputUsuario}</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-28T12:27:49.465657" elapsed="0.241064"/>
+<status status="PASS" start="2025-12-28T22:04:58.103938" elapsed="0.259764"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-28T12:27:49.707759" level="INFO">Typing text 'testpass123PQ' into text field 'id=password-input'.</msg>
+<msg time="2025-12-28T22:04:58.364201" level="INFO">Typing text 'testpass123PQ' into text field 'id=password-input'.</msg>
 <arg>${InputContrasena}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-28T12:27:49.707189" elapsed="0.176701"/>
+<status status="PASS" start="2025-12-28T22:04:58.363923" elapsed="0.083828"/>
 </kw>
-<status status="PASS" start="2025-12-28T12:27:49.386150" elapsed="0.497963"/>
+<status status="PASS" start="2025-12-28T22:04:57.950777" elapsed="0.497115"/>
 </kw>
 <kw name="Hacer login" owner="common">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-12-28T12:27:49.885851" level="INFO">Clicking button 'id=login-button'.</msg>
+<msg time="2025-12-28T22:04:58.448601" level="INFO">Clicking button 'id=login-button'.</msg>
 <arg>${BotonIniciarSesion}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-28T12:27:49.885362" elapsed="0.171623"/>
+<status status="PASS" start="2025-12-28T22:04:58.448390" elapsed="0.197113"/>
 </kw>
-<status status="PASS" start="2025-12-28T12:27:49.884716" elapsed="0.172484"/>
+<status status="PASS" start="2025-12-28T22:04:58.448100" elapsed="0.197551"/>
 </kw>
 <kw name="Validar Login Exitoso" owner="common">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${BotonCerrarSesion}</arg>
 <arg>${TIMEOUT10S}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-28T12:27:50.059556" elapsed="3.217048"/>
+<status status="PASS" start="2025-12-28T22:04:58.646194" elapsed="3.477181"/>
 </kw>
-<status status="PASS" start="2025-12-28T12:27:50.058339" elapsed="3.218498"/>
+<status status="PASS" start="2025-12-28T22:04:58.645892" elapsed="3.477666"/>
 </kw>
 <kw name="Hacer Logout" owner="common">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-12-28T12:27:53.278331" level="INFO">Clicking button 'id=logout-button'.</msg>
+<msg time="2025-12-28T22:05:02.124391" level="INFO">Clicking button 'id=logout-button'.</msg>
 <arg>${BotonCerrarSesion}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-28T12:27:53.277901" elapsed="0.154658"/>
+<status status="PASS" start="2025-12-28T22:05:02.124140" elapsed="0.064891"/>
 </kw>
-<status status="PASS" start="2025-12-28T12:27:53.277358" elapsed="0.155402"/>
+<status status="PASS" start="2025-12-28T22:05:02.123796" elapsed="0.065386"/>
 </kw>
 <kw name="Validar Logout" owner="common">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${BotonIniciarSesion}</arg>
 <arg>${TIMEOUT10S}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-28T12:27:53.433668" elapsed="1.078266"/>
+<status status="PASS" start="2025-12-28T22:05:02.189849" elapsed="1.318210"/>
 </kw>
-<status status="PASS" start="2025-12-28T12:27:53.433233" elapsed="1.078893"/>
+<status status="PASS" start="2025-12-28T22:05:02.189476" elapsed="1.318715"/>
 </kw>
 <doc>Verifica que el usuario pueda iniciar sesión correctamente</doc>
-<status status="PASS" start="2025-12-28T12:27:49.384593" elapsed="5.127941"/>
+<status status="PASS" start="2025-12-28T22:04:57.950168" elapsed="5.558166"/>
 </test>
 <kw name="Cerrar Navegador" owner="common" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-12-28T12:27:54.514252" elapsed="2.253671"/>
+<status status="PASS" start="2025-12-28T22:05:03.509198" elapsed="0.062145"/>
 </kw>
-<status status="PASS" start="2025-12-28T12:27:54.513873" elapsed="2.254273"/>
+<status status="PASS" start="2025-12-28T22:05:03.508980" elapsed="0.062517"/>
 </kw>
-<status status="PASS" start="2025-12-28T12:27:46.342790" elapsed="10.425455"/>
+<status status="PASS" start="2025-12-28T22:04:45.883227" elapsed="17.688320"/>
 </suite>
-<status status="PASS" start="2025-12-28T12:27:46.189248" elapsed="10.580815"/>
+<status status="PASS" start="2025-12-28T22:04:45.862053" elapsed="17.710154"/>
 </suite>
 <statistics>
 <total>
@@ -109,8 +109,8 @@
 <tag>
 </tag>
 <suite>
-<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
-<stat name="Login" id="s1-s1" pass="1" fail="0" skip="0">Tests.Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login">Tests.Login</stat>
 </suite>
 </statistics>
 <errors>
