@@ -32,10 +32,10 @@ command = [
     "robot",
     "--outputdir", results_dir,
     "--variable", f"BASE_URL:{base_url}",
+    "--variable", "HEADLESS:true",
     "--report", report_file,
     "--log", log_file,
     "--output", output_file,
-    "--variable", "HEADLESS:true",
     "tests"
 ]
 
@@ -45,3 +45,6 @@ subprocess.run(command, check=True)
 shutil.copy(f"{results_dir}/{report_file}", f"{docs_dir}/index.html")
 shutil.copy(f"{results_dir}/{log_file}", f"{docs_dir}/log.html")
 shutil.copy(f"{results_dir}/{output_file}", f"{docs_dir}/output.xml")
+
+with open(f"{docs_dir}/.last_run.txt", "w") as f:
+    f.write(timestamp)
