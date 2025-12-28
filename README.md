@@ -4,6 +4,8 @@ Un sistema de login web completo desarrollado específicamente para pruebas auto
 
 ![Robot Framework Tests](https://github.com/dmelchor24/website-login/actions/workflows/robot-tests.yaml/badge.svg)
 
+📊 **Reporte de pruebas**  
+https://dmelchor24.github.io/website-login
 
 ## 🚀 Características
 

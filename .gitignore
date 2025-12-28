@@ -126,7 +126,6 @@ out/
 results/
 reports/
 logs/
-*.xml
 selenium-screenshot-*.png
 
 # Selenium
