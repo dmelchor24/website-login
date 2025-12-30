@@ -47,7 +47,7 @@ El flujo de la solución está diseñado para simular un entorno real de CI/CD:
 4. Robot Framework ejecuta las pruebas E2E.
 5. Los reportes de ejecución se publican en GitHub Pages.
 
-![Diagrama](diagrama\DiagramaCI.png)
+![Diagrama](diagrama/DiagramaCI.png)
 
 ---
 
@@ -161,19 +161,3 @@ const TEST_CREDENTIALS = {
 ---
 
 **Nota**: Este sistema está diseñado específicamente para pruebas y desarrollo. No usar en producción sin las medidas de seguridad apropiadas.
-
----
-
-flowchart LR
-    Dev[👨‍💻 Developer<br/>Push al repositorio]
-    GitHub[🐙 GitHub Repository]
-    Netlify[🚀 Netlify<br/>Deploy Web App]
-    Actions[🤖 GitHub Actions<br/>CI Pipeline]
-    Robot[🧪 Robot Framework<br/>E2E Tests]
-    Pages[📊 GitHub Pages<br/>Test Reports]
-
-    Dev --> GitHub
-    GitHub --> Netlify
-    GitHub --> Actions
-    Actions --> Robot
-    Robot --> Pages
