@@ -1,280 +1,179 @@
-# Sistema de Login Web para Pruebas con Robot Framework
+# 🚀 Sistema de Login Web con QA Automation y CI usando Robot Framework
 
-Un sistema de login web completo desarrollado específicamente para pruebas automatizadas con Robot Framework. Incluye autenticación, gestión de sesiones, validación de formularios y características de accesibilidad.
+Proyecto de **automatización de pruebas E2E** para un sistema de login web, integrando **Robot Framework**, **GitHub Actions (CI)** y **publicación automática de reportes en GitHub Pages**.
 
 ![Robot Framework Tests](https://github.com/dmelchor24/website-login/actions/workflows/robot-tests.yaml/badge.svg)
 
-📊 **Reporte de pruebas**  
-https://dmelchor24.github.io/website-login
+📊 **Reporte de la última ejecución (GitHub Pages)**  
+👉 https://dmelchor24.github.io/website-login
 
-## 🚀 Características
+🌐 **Demo en vivo de la aplicación**  
+👉 https://website-login-test.netlify.app
 
-- **Autenticación Completa**: Sistema de login con credenciales predefinidas
-- **Gestión de Sesiones**: Control automático de sesiones con expiración y extensión
-- **Validación de Formularios**: Validación en tiempo real con mensajes de error
-- **Accesibilidad**: Soporte completo para lectores de pantalla y navegación por teclado
-- **Diseño Responsivo**: Compatible con dispositivos móviles y de escritorio
-- **Pruebas Automatizadas**: Optimizado para Robot Framework con selectores únicos
-- **Interfaz en Español**: Toda la interfaz y mensajes en español
+---
+
+## 🧪 Tecnologías utilizadas
+
+- Robot Framework
+- SeleniumLibrary
+- Python 3.11
+- Netlify
+- GitHub Actions (CI)
+- GitHub Pages (publicación de reportes)
+- Chrome (headless / visual)
+- HTML, CSS, JavaScript (aplicación bajo prueba)
+
+---
+
+## ⚙️ ¿Qué hace este proyecto?
+
+✔ Simula un sistema real de login/logout  
+✔ Ejecuta pruebas automatizadas E2E con Robot Framework  
+✔ Corre automáticamente en cada `push` o `pull request`  
+✔ Genera reportes HTML detallados (report, log, output)  
+✔ Publica resultados automáticamente en GitHub Pages   
+✔ Soporta ejecución **local y CI** con `BASE_URL` dinámica  
+✔ Diferencia ejecución **headless vs visual**  
+
+---
+
+## 🧩 Arquitectura de la solución
+
+El flujo de la solución está diseñado para simular un entorno real de CI/CD:
+
+1. El desarrollador realiza un push al repositorio.
+2. Netlify despliega automáticamente la aplicación web.
+3. GitHub Actions ejecuta el pipeline de CI.
+4. Robot Framework ejecuta las pruebas E2E.
+5. Los reportes de ejecución se publican en GitHub Pages.
+
+![Diagrama](diagrama\DiagramaCI.png)
+
+---
 
 ## 📁 Estructura del Proyecto
 
 ```
-├── index.html              # Página principal de login
-├── success.html            # Página de éxito después del login
-├── assets/                 # Recursos estáticos
-│   ├── icons/             # Iconos del proyecto
-│   │   ├── favicon.ico    # Icono del navegador
-│   │   ├── login-icon.svg # Icono de login
-│   │   ├── success-icon.svg # Icono de éxito
-│   │   ├── user-icon.svg  # Icono de usuario
-│   │   └── logout-icon.svg # Icono de logout
-│   ├── images/            # Imágenes adicionales
-│   │   ├── logo.png       # Logo del proyecto
-│   │   └── background.jpg # Imagen de fondo (opcional)
-│   └── fonts/             # Fuentes personalizadas (opcional)
+├── index.html                      # Página principal de login
+├── success.html                    # Página de éxito después del login
+├── assets/                         # Recursos estáticos
+│   └── icons/                      # Iconos del proyecto
+│       └── iconoIndex.png          # Icono principal
 ├── css/
-│   └── styles.css          # Estilos CSS completos
+│   └── styles.css                  # Estilos CSS completos
 ├── js/
-│   ├── login.js           # Lógica de autenticación y validación
-│   └── success.js         # Funcionalidad de la página de éxito
-├── .gitignore             # Archivos a ignorar por Git
-└── README.md              # Este archivo
+│   ├── login.js                    # Lógica de autenticación y validación
+│   └── success.js                  # Funcionalidad de la página de éxito
+├── tests/
+│   └── login.robot                 # Casos de prueba principales
+├── elementos/
+│   └── elementos.robot             # Definición de elementos web
+├── variables/
+│   └── variables.robot             # Variables de configuración
+├── resources/
+│   └── common.robot                # Keywords reutilizables
+├── scripts/
+│   └── execute-tests.py            # Script de ejecución de pruebas
+├── results/                        # Resultados de ejecuciones para ambiente local
+├── docs/                           # Reportes para GitHub Pages
+├── .github/
+│   └── workflows/
+│       └── robot-tests.yaml        # Configuración CI/CD
+├── requirements.txt                # Dependencias Python
+├── .gitignore                      # Archivos a ignorar por Git
+└── README.md                       # Archivo de explicación del proyecto
 ```
+---
 
 ## 🔐 Credenciales de Prueba
 
 El sistema incluye las siguientes credenciales predefinidas para pruebas:
 
-| Usuario    | Contraseña   | Descripción           |
-|------------|-------------|-----------------------|
-| `testuser` | `testpass123`| Usuario de prueba     |
-| `admin`    | `admin123`   | Usuario administrador |
-| `demo`     | `demo123`    | Usuario de demostración |
+| Usuario    | Contraseña      | Descripción       |
+|------------|-----------------|-------------------|
+| `testuser` | `testpass123PQ` | Usuario estándar  |
+| `admin`    | `admin123PQ`    | Usuario admin     |
+| `demo`     | `demo123PQ`     | Usuario demo      |
 
-## 🛠️ Instalación y Uso
+---
 
-### Requisitos Previos
-- Navegador web moderno
-- Servidor web local (opcional, puede ejecutarse directamente desde archivos)
+## 🛠️ Instalación y uso local
 
-### Instalación
+```bash
+git clone https://github.com/dmelchor24/website-login.git
+cd website-login
+pip install -r requirements.txt
+python -m http.server 5500
+```
+**Acceder a la aplicación:**
+   - Abrir `http://localhost:5500` en el navegador
+   - O usar la demo en vivo: https://website-login-test.netlify.app
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com/tu-usuario/sistema-login-web.git
-   cd sistema-login-web
-   ```
-
-2. **Estructura de archivos:**
-   - Asegurar que la estructura de carpetas sea correcta
-   - Los iconos deben estar en `assets/icons/`
-   - Las imágenes adicionales en `assets/images/`
-
-3. **Ejecutar localmente:**
-   - **Opción 1**: Abrir `index.html` directamente en el navegador
-   - **Opción 2**: Usar un servidor web local:
-     ```bash
-     # Con Python 3
-     python -m http.server 8000
-     
-     # Con Node.js (http-server)
-     npx http-server
-     
-     # Con PHP
-     php -S localhost:8000
-     ```
-
-4. **Acceder a la aplicación:**
-   - Abrir `http://localhost:8000` en el navegador
-   - O abrir `index.html` directamente
+---
 
 ## 🧪 Pruebas con Robot Framework
 
-### Elementos de Prueba
+### Ejecutar Pruebas Localmente
 
-Todos los elementos incluyen atributos `data-testid` únicos para facilitar las pruebas:
+```bash
+# Ejecutar todas las pruebas
+python scripts/execute-tests.py
 
-#### Página de Login (`index.html`)
-- `username-input`: Campo de usuario
-- `password-input`: Campo de contraseña
-- `login-button`: Botón de iniciar sesión
-- `clear-button`: Botón de limpiar formulario
-- `login-status`: Mensaje de estado
+# Ejecutar con URL personalizada
+python scripts/execute-tests.py --base-url=http://localhost:5500
 
-#### Página de Éxito (`success.html`)
-- `username-value`: Nombre de usuario mostrado
-- `session-value`: ID de sesión
-- `logout-button`: Botón de cerrar sesión
-- `dashboard-button`: Botón de dashboard
-- `profile-button`: Botón de perfil
-
-### Ejemplo de Prueba Robot Framework
-
-```robot
-*** Settings ***
-Library    SeleniumLibrary
-
-*** Variables ***
-${URL}              http://localhost:8000
-${BROWSER}          Chrome
-${USERNAME}         testuser
-${PASSWORD}         testpass123
-
-*** Test Cases ***
-Login Exitoso
-    Open Browser    ${URL}    ${BROWSER}
-    Input Text      css:[data-testid="username-input"]    ${USERNAME}
-    Input Text      css:[data-testid="password-input"]    ${PASSWORD}
-    Click Button    css:[data-testid="login-button"]
-    Wait Until Page Contains Element    css:[data-testid="success-container"]
-    Element Should Contain    css:[data-testid="username-value"]    ${USERNAME}
-    Close Browser
-
-Login Fallido
-    Open Browser    ${URL}    ${BROWSER}
-    Input Text      css:[data-testid="username-input"]    usuario_invalido
-    Input Text      css:[data-testid="password-input"]    contraseña_invalida
-    Click Button    css:[data-testid="login-button"]
-    Wait Until Element Is Visible    css:[data-testid="login-status"]
-    Element Should Contain    css:[data-testid="login-status"]    Usuario no encontrado
-    Close Browser
+# Ejecutar directamente con Robot Framework
+robot --outputdir results tests/
 ```
+---
 
-## 🎨 Características Técnicas
-### Validación de Formularios
-- Validación en tiempo real
-- Prevención de envíos múltiples
-- Limpieza automática de errores
+### Estructura de Pruebas
 
-### Gestión de Sesiones
-- Duración configurable (30 minutos por defecto)
-- Advertencias de expiración
-- Extensión de sesión
-- Limpieza automática al cerrar
+El proyecto utiliza una arquitectura modular para las pruebas:
 
-### Accesibilidad
-- Soporte para lectores de pantalla
-- Navegación completa por teclado
-- Indicadores de enfoque mejorados
-- Modo de alto contraste
-- Atajos de teclado:
-  - `Escape`: Limpiar formulario
-  - `Alt + P`: Alternar visibilidad de contraseña
-  - `Ctrl/Cmd + Enter`: Enviar formulario
+- **`tests/login.robot`**: Casos de prueba principales
+- **`elementos/elementos.robot`**: Definición de selectores web
+- **`variables/variables.robot`**: Variables de configuración
+- **`resources/common.robot`**: Keywords reutilizables
 
-### Diseño Responsivo
-- Compatible con móviles (320px+)
-- Tablets (768px+)
-- Escritorio (1024px+)
-- Soporte para impresión
+---
 
 ## 🔧 Configuración
 
 ### Personalizar Credenciales
-Editar el archivo `js/login.js`:
+Editar el archivo `js/login.js` para agregar nuevas credenciales:
 
 ```javascript
 const TEST_CREDENTIALS = {
-    'tu_usuario': 'tu_contraseña',
-    'otro_usuario': 'otra_contraseña'
+    'testuser': 'testpass123PQ',
+    'tu_usuario': 'tu_contraseña'
 };
 ```
 
-### Uso de Assets
-Para usar los iconos y recursos en tu HTML:
+---
 
-```html
-<!-- Favicon -->
-<link rel="icon" href="assets/icons/favicon.ico">
+## 🤖 CI / CD
 
-<!-- Iconos en HTML -->
-<img src="assets/icons/login-icon.svg" alt="Login" class="login-icon">
-<img src="assets/icons/user-icon.svg" alt="Usuario" class="user-icon">
+- CI completo con GitHub Actions
+- CD parcial para publicación de reportes
+- Preparado para despliegue automático futuro
 
-<!-- Logo -->
-<img src="assets/images/logo.png" alt="Logo" class="logo">
-```
-
-En CSS:
-```css
-/* Usar iconos como background */
-.login-icon {
-    background-image: url('../assets/icons/login-icon.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-/* Logo de fondo */
-.header-logo {
-    background-image: url('../assets/images/logo.png');
-}
-```
-
-### Configurar Duración de Sesión
-En `js/login.js` y `js/success.js`:
-
-```javascript
-this.maxSessionDuration = 30 * 60 * 1000; // 30 minutos
-this.warningTime = 5 * 60 * 1000; // Advertencia a los 5 minutos
-```
-
-## 📱 Compatibilidad
-
-### Navegadores Soportados
-- Chrome 80+
-- Firefox 75+
-- Safari 13+
-- Edge 80+
-
-### Características Modernas
-- CSS Grid y Flexbox
-- ES6+ JavaScript
-- Local/Session Storage
-- Media Queries avanzadas
-
-## 🐛 Solución de Problemas
-
-### Problemas Comunes
-
-1. **La página no carga correctamente**
-   - Verificar que todos los archivos estén en la estructura correcta
-   - Comprobar la consola del navegador para errores
-   - Asegurar que la carpeta `assets/` esté presente
-
-2. **Los iconos no se muestran**
-   - Verificar que los archivos estén en `assets/icons/`
-   - Comprobar las rutas en HTML y CSS
-   - Verificar permisos de archivos
-
-3. **Las credenciales no funcionan**
-   - Verificar que se estén usando las credenciales exactas
-   - Revisar mayúsculas y minúsculas
-
-4. **Problemas con Robot Framework**
-   - Asegurar que los selectores `data-testid` estén correctos
-   - Verificar que la página esté completamente cargada antes de interactuar
-
-## 🤝 Contribuir
-
-1. Fork el proyecto
-2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## 👥 Autor
-
-- **Tu Nombre** - *Desarrollo inicial* - [tu-usuario](https://github.com/tu-usuario)
-
-## 🙏 Agradecimientos
-
-- Robot Framework community
-- Selenium WebDriver
 ---
 
 **Nota**: Este sistema está diseñado específicamente para pruebas y desarrollo. No usar en producción sin las medidas de seguridad apropiadas.
+
+---
+
+flowchart LR
+    Dev[👨‍💻 Developer<br/>Push al repositorio]
+    GitHub[🐙 GitHub Repository]
+    Netlify[🚀 Netlify<br/>Deploy Web App]
+    Actions[🤖 GitHub Actions<br/>CI Pipeline]
+    Robot[🧪 Robot Framework<br/>E2E Tests]
+    Pages[📊 GitHub Pages<br/>Test Reports]
+
+    Dev --> GitHub
+    GitHub --> Netlify
+    GitHub --> Actions
+    Actions --> Robot
+    Robot --> Pages
